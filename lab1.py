@@ -9,26 +9,35 @@
 # EMAIL: smalcaza@uci.edu
 # STUDENT ID: smalcaza 73371481
 
-num1 = int(input("Enter num1(integer):"))
-num2 = int(input("Enter num2(integer):"))
-operator = str(input("Enter operator(+, -, *, /):"))
-
 def operationSolver(num1, num2, operator):
     if operator == "+":
-        print("num1 + num2 =", num1 + num2)
         return num1 + num2
     elif operator == "-":
-        print("num1 - num2 =", num1 - num2)
         return num1 - num2
     elif operator == "*":
-        print("num1 * num2 =", num1 * num2)
         return num1 * num2
     elif operator == "/":
         if num2 != 0:
-            print("num1 / num2 =", num1 / num2)
             return num1 / num2
         else:
             return "Error: Division by zero!"
     else:
         return "Error: Invalid operator!"
-operationSolver(num1, num2, operator)
+
+
+def main():
+    while True:
+        num1 = int(input("Enter num1(integer):"))
+        num2 = int(input("Enter num2(integer):"))
+        operator = input("Enter operator(+, -, *, /):")
+
+        result = operationSolver(num1, num2, operator)
+        print(result)
+
+        again = input("Do another calculation? (y/n): ")
+        if again.lower() != 'y':
+            break
+
+
+if __name__ == "__main__":
+    main()
